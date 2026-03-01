@@ -1,0 +1,30 @@
+.ctrl-input-field {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: var(--ctrl-surface); /* Blanco o Gris Oscuro según el tema */
+  border: 1px solid var(--ctrl-border);
+  border-radius: 8px;
+  
+  /* Tipografía de Terminal */
+  font-family: var(--font-mono); 
+  font-size: 1rem;
+  color: var(--ctrl-text);
+  
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &::placeholder {
+    color: var(--ctrl-text);
+    opacity: 0.3;
+    font-family: var(--font-sans); /* Placeholder más humano */
+  }
+
+  /* El brillo del "Enfoque" (Focus) */
+  &:focus {
+    border-color: var(--ctrl-primary); /* Verde en Cash, Índigo en Task */
+    background-color: var(--ctrl-bg); /* Cambia al fondo suave que definimos */
+    
+    /* Efecto de resplandor sutil estilo terminal */
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--ctrl-primary), transparent 90%);
+  }
+}

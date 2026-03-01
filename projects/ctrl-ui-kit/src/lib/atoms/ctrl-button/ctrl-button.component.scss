@@ -1,0 +1,72 @@
+/* --- 1. Estilos Base --- */
+.ctrl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; 
+  padding: 12px 24px;
+  border-radius: 12px; 
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: var(--font-sans); /* Usamos nuestra variable Inter */
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); /* Transición más fluida */
+  user-select: none;
+}
+
+/* --- 2. Variantes --- */
+
+.primary {
+  background-color: var(--ctrl-primary);
+  color: #ffffff; /* O una variable de contraste claro */
+  border-color: var(--ctrl-primary);
+  /* Usamos color-mix para la sombra sin necesitar variables RGB */
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--ctrl-primary), transparent 80%);
+
+  &:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+    box-shadow: 0 6px 16px color-mix(in srgb, var(--ctrl-primary), transparent 70%);
+  }
+}
+
+.secondary {
+  background-color: transparent;
+  color: var(--ctrl-primary);
+  border-color: var(--ctrl-primary);
+
+  &:hover {
+    /* Creamos un fondo del 10% de opacidad dinámicamente */
+    background-color: color-mix(in srgb, var(--ctrl-primary), transparent 90%);
+  }
+}
+
+.tertiary {
+  background-color: transparent;
+  color: var(--ctrl-text);
+  
+  &:hover {
+    color: var(--ctrl-primary);
+    background-color: color-mix(in srgb, var(--ctrl-primary), transparent 92%);
+  }
+}
+
+/* --- 3. Iconos (Unificado) --- */
+.icon-frame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;  /* Tamaño estandarizado */
+  height: 20px;
+  transition: color 0.2s ease, transform 0.2s ease;
+
+  &:empty {
+    display: none;
+  }
+  
+  /* Pequeña animación si el botón es hover */
+  .ctrl-btn:hover & {
+    transform: scale(1.1);
+  }
+}

@@ -1,0 +1,11 @@
+<button class="ctrl-btn {{ variant() }}">
+  
+  <span class="icon-frame" [style.color]="useAccentIcon() ? 'var(--ctrl-accent)' : 'inherit'">
+    <ng-content select="[icon]"></ng-content>
+  </span>
+
+  <span>
+    <ng-content></ng-content>
+  </span>
+
+</button>
