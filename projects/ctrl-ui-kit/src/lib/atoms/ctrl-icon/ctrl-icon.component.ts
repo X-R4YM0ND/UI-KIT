@@ -1,10 +1,11 @@
-import { Component, input, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, OnInit, signal } from '@angular/core';
 import { CommandPersonality } from './ctrl-icons.constants';
 
 @Component({
   selector: 'lib-ctrl-icon',
   templateUrl: './ctrl-icon.component.html',
   styleUrls: ['./ctrl-icon.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CtrlIconComponent  implements OnInit {
 

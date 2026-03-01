@@ -1,11 +1,11 @@
-import { Component, input, model } from '@angular/core';
+import { Component, input, model, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'lib-ctrl-input',
-  standalone: true,
-  imports: [], // ¡Mira mamá, sin FormsModule!
+  imports: [],
   templateUrl: './ctrl-input.component.html',
   styleUrls: ['./ctrl-input.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CtrlInputComponent {
   label = input<string>('');
