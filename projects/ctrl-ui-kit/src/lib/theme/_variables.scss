@@ -1,0 +1,48 @@
+/* =========================================
+   SISTEMA DE DISEÑO KEYVORT (UI-KIT)
+========================================= */
+
+:root {
+  /* =========================================
+     1. PALETA MAESTRA (Los Colores Puros)
+     Estos son intocables y siempre vibrantes.
+  ========================================= */
+  /* Identidad Cash */
+  --kv-brand-green: #10B981;  
+  --kv-brand-yellow: #FBBF24;
+  --kv-brand-pink: #FF80AB;   
+  
+  /* Identidad Tasks */
+  --kv-brand-indigo: #4F46E5; 
+  --kv-brand-orange: #F97316; 
+
+  /* Escala Neutral (Para los fondos y textos) */
+  --kv-gray-50: #F9FAFB;  /* Blanco Roto (Fondo Claro) */
+  --kv-gray-100: #FFFFFF; /* Blanco Puro (Superficie Clara) */
+  --kv-gray-800: #1F2937; /* Gris Carbón (Superficie Oscura) */
+  --kv-gray-900: #111827; /* Noche Profunda (Fondo Oscuro) */
+  
+  --kv-text-light: #E2E8F0;
+  --kv-text-dark: #111827;
+
+  /* =========================================
+     2. EL LIENZO: TEMA CLARO (Por defecto)
+     Solo cambian los fondos y textos.
+  ========================================= */
+--kv-gray-soft: #F1F5F9; /* Gris azulado muy suave */
+  
+  --ctrl-bg: var(--kv-gray-soft);
+  --ctrl-surface: #FFFFFF;
+  --ctrl-text: #0F172A; /* Azul noche profundo para el texto */
+  --ctrl-border: rgba(15, 23, 42, 0.08);
+}
+
+/* =========================================
+   3. EL LIENZO: TEMA OSCURO (.dark)
+========================================= */
+body.dark {
+  --ctrl-bg: var(--kv-gray-900);
+  --ctrl-surface: var(--kv-gray-800);
+  --ctrl-text: var(--kv-text-light);
+  --ctrl-border: rgba(249, 250, 251, 0.1); /* Sombra/Borde sutil claro */
+}
