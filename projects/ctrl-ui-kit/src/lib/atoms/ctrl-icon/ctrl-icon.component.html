@@ -1,11 +1,12 @@
 <svg 
   (click)="triggerAnim()" 
   [class.tapped]="isTapped()"
-  class="command-mascot {{ personality() }}"
+  [attr.class]="'command-mascot ' + personality()"
   width="120" height="120" viewBox="0 0 30 24" fill="none"
 >
-  <g class="head-group" style="transform-origin: center bottom;">
+  <g class="head-group">
     <path class="body" d="M20.5 19C21.6 19 22.2 17.9 21.7 17L15.2 5.5C14.7 4.6 13.5 4.6 13 5.5L11.5 8C11 9 9.5 9 9 8L6.5 3.5C6 2.6 4.5 3.5 4.8 4.5C5.5 7 7 12 7 16C7 17.6 8.4 19 10 19H20.5Z" stroke-width="1.5" stroke-linejoin="round" />
+    
     <circle class="eye" cx="10.5" cy="13.5" r="1.5" />
 
     <path class="actor dollar-sign" d="M10.5 10v8 M12.5 12.5c0-1.5-4-1.5-4 0s4 1.5 4 3-4 1.5-4 0" />

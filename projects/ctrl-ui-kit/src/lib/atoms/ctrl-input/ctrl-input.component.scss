@@ -1,12 +1,20 @@
+/* =========================================
+   ÁTOMO: CTRL-INPUT (KeyVort System)
+========================================= */
+
 .ctrl-input-field {
   width: 100%;
   padding: 14px 16px;
-  background-color: var(--ctrl-surface); /* Blanco o Gris Oscuro según el tema */
-  border: 1px solid var(--ctrl-border);
-  border-radius: 8px;
   
-  /* Tipografía de Terminal */
-  font-family: var(--font-mono); 
+  /* 1. Superficie Dinámica */
+  /* Usa Blanco Puro en Light y Gris Carbón en Dark */
+  background-color: var(--ctrl-surface);
+  border: 1px solid var(--ctrl-border);
+  border-radius: 8px; /* Mantenemos tus 8px del sistema */
+  
+  /* 2. Tipografía Híbrida */
+  /* El valor es Mono para estilo terminal, pero la fuente es KeyVort */
+  font-family: var(--kv-font-mono, 'JetBrains Mono', monospace);
   font-size: 1rem;
   color: var(--ctrl-text);
   
@@ -16,15 +24,27 @@
   &::placeholder {
     color: var(--ctrl-text);
     opacity: 0.3;
-    font-family: var(--font-sans); /* Placeholder más humano */
+    font-family: var(--kv-font-sans, 'Inter', sans-serif); /* Más legible para humanos */
   }
 
-  /* El brillo del "Enfoque" (Focus) */
+  /* 3. El "Brillo de Enfoque" KeyVort */
   &:focus {
-    border-color: var(--ctrl-primary); /* Verde en Cash, Índigo en Task */
-    background-color: var(--ctrl-bg); /* Cambia al fondo suave que definimos */
+    /* Usamos el verde de Cash (#10B981) o el índigo según el contexto */
+    border-color: var(--kv-brand-green);
     
-    /* Efecto de resplandor sutil estilo terminal */
-    box-shadow: 0 0 0 4px color-mix(in srgb, var(--ctrl-primary), transparent 90%);
+    /* Cambia al fondo suave (gris azulado o noche profunda) */
+    background-color: var(--ctrl-bg);
+    
+    /* Efecto de resplandor sutil estilo terminal usando el verde de marca */
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--kv-brand-green), transparent 90%);
+    
+    /* Ligera elevación visual */
+    transform: translateY(-1px);
+  }
+
+  /* Estado de error (Opcional para tu lógica de validación) */
+  &.error {
+    border-color: var(--kv-brand-pink);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--kv-brand-pink), transparent 90%);
   }
 }

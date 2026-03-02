@@ -1,95 +1,91 @@
 /* =========================================
-   1. CONFIGURACIÓN DE PERSONALIDADES
+   1. CONFIGURACIÓN DE IDENTIDAD (KeyVort Tokens)
 ========================================= */
-.command-mascot.cash-lick {
-  --local-primary: var(--ctrl-primary);
-  --local-accent: var(--kv-brand-yellow); /* Amarillo para el dólar */
-}
+.command-mascot {
+  &.cash-lick {
+    --local-primary: var(--kv-brand-green);
+    --local-accent: var(--kv-brand-yellow);
+  }
 
-.command-mascot.task-done {
-  --local-primary: var(--ctrl-tasks-primary, #4F46E5);
-  --local-accent: var(--ctrl-tasks-accent, #F97316);
+  &.task-done {
+    --local-primary: var(--kv-brand-indigo);
+    --local-accent: var(--kv-brand-orange);
+  }
+
+  &.neutral {
+    --local-primary: var(--kv-brand-indigo);
+    --local-accent: var(--kv-brand-pink);
+  }
 }
 
 /* =========================================
-   2. ESTILOS BASE DEL SVG
+   2. ESTILOS BASE Y ANIMACIÓN
 ========================================= */
 .command-mascot {
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  filter: drop-shadow(0 4px 6px color-mix(in srgb, var(--local-primary) 30%, transparent));
+  /* Efecto de resplandor ergonómico */
+  filter: drop-shadow(0 4px 8px color-mix(in srgb, var(--local-primary), transparent 70%));
 
   .body {
     fill: var(--local-primary);
     stroke: var(--local-primary);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  /* EL OJO: Visible por defecto */
   .eye {
-    fill: var(--ctrl-bg-main, #FAFAFA); /* Blanco/Claro */
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    opacity: 1;
+    fill: var(--kv-gray-50); /* Usamos tu blanco roto */
+    transition: opacity 0.2s ease;
   }
 
-  /* Punto de anclaje abajo para el efecto de aplastamiento */
   .head-group {
     transform-origin: bottom center;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
-}
 
-/* =========================================
-   3. ELEMENTOS "ACTORES"
-========================================= */
-/* Estilo base para líneas que se dibujan (lengua, check, dólar) */
-.actor {
-  fill: none;
-  stroke: var(--local-accent);
-  stroke-width: 1.2; /* Un poco más fino para el dólar */
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 24; /* Suficiente para cubrir el trazado más largo */
-  stroke-dashoffset: 24; /* Escondido inicialmente */
-  opacity: 0; /* Invisible */
-  transition: opacity 0.2s;
-
-  /* El dólar necesita ser un poco más grueso para destacar */
-  &.dollar-sign {
+  /* Animación de Dibujo (Trazados) */
+  .actor {
+    fill: none;
+    stroke: var(--local-accent);
     stroke-width: 1.2;
+    stroke-linecap: round;
+    stroke-dasharray: 24;
+    stroke-dashoffset: 24;
+    opacity: 0;
+    transition: opacity 0.2s;
   }
 }
 
 /* =========================================
-   4. ANIMACIÓN: CAJA REGISTRADORA (CASH)
+   3. ACTIVACIÓN DE ESTADOS (Tapped)
 ========================================= */
-/* Animación Cash */
-.cash-lick.tapped {
-  .head-group { animation: register-squash 0.5s ease; }
-  .eye { opacity: 0; }
-  .dollar-sign { opacity: 1; animation: draw-path 0.5s forwards; }
-  .checkmark, .tongue { display: none; } /* Escondemos lo que no es de esta app */
-}
+.tapped {
+  &.cash-lick {
+    .head-group { animation: register-squash 0.5s ease; }
+    .eye { opacity: 0; }
+    .dollar-sign { opacity: 1; animation: draw-path 0.5s forwards; }
+  }
 
-/* Animación Task */
-.task-done.tapped {
-  .head-group { transform: translateY(-2px) rotate(-5deg); }
-  .eye { animation: wink-anim 0.6s forwards; }
-  .checkmark { opacity: 1; animation: draw-path 0.6s forwards; }
-  .dollar-sign, .tongue { display: none; } /* Escondemos lo que no es de esta app */
+  &.task-done {
+    .head-group { transform: translateY(-4px) rotate(-8deg); }
+    .eye { animation: wink-anim 0.4s forwards; }
+    .checkmark { opacity: 1; animation: draw-path 0.5s forwards; }
+  }
 }
 
 /* =========================================
-   5. KEYFRAMES
+   4. KEYFRAMES (Motores de Movimiento)
 ========================================= */
-/* Efecto de rebote seco de caja registradora */
 @keyframes register-squash {
   0%   { transform: scale(1, 1); }
-  30%  { transform: scale(1.15, 0.75); } /* Aplastado */
-  100% { transform: scale(1, 1); }       /* Vuelta rápida */
+  30%  { transform: scale(1.2, 0.7); } /* Efecto elástico de muelle */
+  100% { transform: scale(1, 1); }
 }
 
-/* Animación genérica para dibujar trazados SVG */
 @keyframes draw-path {
   to { stroke-dashoffset: 0; }
+}
+
+@keyframes wink-anim {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.1); opacity: 0.5; }
 }

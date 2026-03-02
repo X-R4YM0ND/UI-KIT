@@ -1,32 +1,25 @@
-import { ChangeDetectionStrategy, Component, input, OnInit, signal } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { CommandPersonality } from './ctrl-icons.constants';
 
 @Component({
   selector: 'lib-ctrl-icon',
+  imports: [CommonModule],
   templateUrl: './ctrl-icon.component.html',
-  styleUrls: ['./ctrl-icon.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrl: './ctrl-icon.component.scss'
 })
-export class CtrlIconComponent  implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {}
-
-  personality = input<CommandPersonality>('cash-lick')
-
-  isActive = input<boolean>(false);
+export class CtrlIconComponent {
+  // Recibe la personalidad (cash-lick, task-done, etc.)
+  personality = input.required<CommandPersonality>();
+  
+  // Estado interno para la animación de "tap"
   isTapped = signal(false);
 
-  triggerAnim(){
-    if(this.isTapped()) return;
-
+  triggerAnim() {
+    if (this.isTapped()) return;
+    
     this.isTapped.set(true);
-
-    setTimeout(()=>{
-      this.isTapped.set(false);
-    }, 1500);
+    // Reset de la animación después de 600ms
+    setTimeout(() => this.isTapped.set(false), 600);
   }
-
-
 }

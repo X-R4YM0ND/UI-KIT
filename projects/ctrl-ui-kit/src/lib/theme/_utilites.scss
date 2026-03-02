@@ -1,0 +1,16 @@
+/* Flexbox & Layout */
+.d-flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-sm { gap: var(--kv-space-sm); }
+.gap-md { gap: var(--kv-space-md); }
+
+/* Spacing */
+.p-4 { padding: var(--kv-space-md); }
+.m-0 { margin: 0; }
+
+/* Typography */
+.text-sm { font-size: 0.875rem; }
+.font-mono { font-family: var(--kv-font-mono); }
+.bold { font-weight: 600; }
