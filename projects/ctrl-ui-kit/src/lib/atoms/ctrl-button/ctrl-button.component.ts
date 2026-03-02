@@ -13,6 +13,6 @@ export class CtrlButtonComponent  implements OnInit {
   ngOnInit() {}
 
 
-  variant = input <'primary' | 'secondary' | 'tertiary'>('primary')
+  variant = input <'primary' | 'secondary' | 'tertiary' | 'quarter'>('primary') 
   useAccentIcon = input<boolean>(false);
 }

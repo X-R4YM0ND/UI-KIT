@@ -67,6 +67,12 @@
     }
   }
 
+  &.quarter {
+    background-color: transparent;
+    color: var(--ctrl-text);
+    border: none;
+  }
+
   /* --- 3. Iconos y Feedback Visual --- */
   .icon-frame {
     display: inline-flex;
