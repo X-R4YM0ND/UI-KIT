@@ -1,0 +1,19 @@
+<label [class]="styleClass()">
+  <input
+    #input
+    type="radio"
+    [attr.id]="inputId()"
+    [attr.name]="name()"
+    [attr.required]="required() ? '' : undefined"
+    [attr.disabled]="disabled() ? '' : undefined"
+    [attr.checked]="isChecked() ? '' : undefined"
+    [value]="value()"
+    (change)="onChange($event)"
+  />
+  <span class="ctrl-radio-box">
+    @if (isChecked()) {
+      <span class="ctrl-radio-icon"></span>
+    }
+  </span>
+  <ng-content></ng-content>
+</label>

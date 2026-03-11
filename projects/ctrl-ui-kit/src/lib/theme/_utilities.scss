@@ -1,0 +1,38 @@
+/* Flexbox & Layout */
+.d-flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-sm { gap: var(--kv-space-sm); }
+.gap-md { gap: var(--kv-space-md); }
+
+/* Spacing */
+.p-4 { padding: var(--kv-space-md); }
+.m-0 { margin: 0; }
+
+/* Typography */
+.text-sm { font-size: 0.875rem; }
+.font-mono { font-family: var(--kv-font-mono); }
+.bold { font-weight: 600; }
+
+/* Fuentes */
+.font-mono {
+  font-family: var(--ctrl-font-mono) !important;
+  letter-spacing: -0.02em;
+}
+
+.font-inter {
+  font-family: var(--ctrl-font-main) !important;
+}
+
+/* Tipografía de Soporte */
+.text-sm { font-size: 0.875rem; }
+.uppercase { text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* Estilo Terminal (Híbrido JetBrains) */
+.terminal-style {
+  font-family: var(--ctrl-font-mono);
+  background: rgba(0, 0, 0, 0.05);
+  padding: 2px 4px;
+  border-radius: 4px;
+}

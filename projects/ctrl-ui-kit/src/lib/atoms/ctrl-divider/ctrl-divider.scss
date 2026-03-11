@@ -1,0 +1,58 @@
+
+.ctrl-divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.ctrl-divider-horizontal {
+  flex-direction: row;
+}
+
+
+.ctrl-divider-vertical {
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  min-height: 2rem;
+}
+
+.ctrl-divider-vertical-bar {
+  height: 2rem;
+  margin: 0 0.5rem;
+  flex-shrink: 0;
+}
+
+.ctrl-divider-content-vertical {
+  padding: 0;
+}
+
+.ctrl-divider-solid {
+  border-style: solid;
+}
+.ctrl-divider-dashed {
+  border-style: dashed;
+}
+.ctrl-divider-dotted {
+  border-style: dotted;
+}
+
+.ctrl-divider-align-left {
+  justify-content: flex-start;
+}
+.ctrl-divider-align-center {
+  justify-content: center;
+}
+.ctrl-divider-align-right {
+  height: 2rem;
+  flex-shrink: 0;
+  align-items: flex-start;
+}
+.ctrl-divider-align-bottom {
+  align-items: flex-end;
+}
+
+.ctrl-divider-content {
+  padding: 0 0.5rem;
+}

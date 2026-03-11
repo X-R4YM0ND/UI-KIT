@@ -1,25 +1,26 @@
-import { Component, input, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, input, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommandPersonality } from './ctrl-icons.constants';
 
+/**
+ * Animated icon component with different personalities.
+ * Supports tap animation and dynamic styling based on personality.
+ */
 @Component({
   selector: 'lib-ctrl-icon',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './ctrl-icon.component.html',
-  styleUrl: './ctrl-icon.component.scss'
+  styleUrl: './ctrl-icon.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CtrlIconComponent {
-  // Recibe la personalidad (cash-lick, task-done, etc.)
   personality = input.required<CommandPersonality>();
   
-  // Estado interno para la animación de "tap"
   isTapped = signal(false);
 
   triggerAnim() {
     if (this.isTapped()) return;
     
     this.isTapped.set(true);
-    // Reset de la animación después de 600ms
     setTimeout(() => this.isTapped.set(false), 600);
   }
 }

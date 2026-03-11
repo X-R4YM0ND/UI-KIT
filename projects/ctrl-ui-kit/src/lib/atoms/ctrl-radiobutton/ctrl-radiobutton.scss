@@ -1,0 +1,58 @@
+:host {
+  display: inline-flex; 
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+input[type="radio"] {
+  appearance: none;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+  pointer-events: none;
+  margin: 0;
+}
+
+.ctrl-radio-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  min-width: 1.5rem;  
+  min-height: 1.5rem;    
+  border: 2px solid var(--ctrl-border, #ccc);
+  border-radius: 50%;
+  background: var(--ctrl-surface, #fff);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  flex-shrink: 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+}
+
+.ctrl-radio-icon {
+  display: block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--kv-brand-green, #10B981);
+  position: relative;
+  z-index: 1;
+}
+
+input[type="radio"]:disabled ~ .ctrl-radio-box {
+  border-color: var(--kv-gray-50, #F9FAFB);
+  background: var(--kv-gray-soft, #F1F5F9);
+  cursor: not-allowed;
+}
+
+.ctrl-radio-box.invalid {
+  border-color: var(--kv-brand-pink, #FF80AB);
+}

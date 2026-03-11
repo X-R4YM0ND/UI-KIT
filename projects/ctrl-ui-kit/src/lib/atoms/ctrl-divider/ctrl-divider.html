@@ -1,0 +1,17 @@
+<div
+	[attr.aria-orientation]="layout()"
+	role="separator"
+	[class]="getRootClass()"
+	[style]="getDividerStyle()"
+>
+	@if (layout() === 'horizontal') {
+		<div class="ctrl-divider-content">
+			<ng-content></ng-content>
+		</div>
+	} @else {
+		<div class="ctrl-divider-vertical-bar" [style]="getVerticalBarStyle()"></div>
+		<div class="ctrl-divider-content ctrl-divider-content-vertical">
+			<ng-content></ng-content>
+		</div>
+	}
+</div>

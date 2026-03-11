@@ -1,3 +1,12 @@
+// En lugar de variable.css, usamos los pesos estándar
+@import "@fontsource/inter/400.css"; // Regular
+@import "@fontsource/inter/600.css"; // Semi-Bold
+@import "@fontsource/inter/700.css"; // Bold
+
+// JetBrains Mono (Asegúrate que estos también existan)
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/700.css";
+
 /* =========================================
    SISTEMA DE DISEÑO KEYVORT (UI-KIT)
 ========================================= */
@@ -45,4 +54,30 @@ body.dark {
   --ctrl-surface: var(--kv-gray-800);
   --ctrl-text: var(--kv-text-light);
   --ctrl-border: rgba(249, 250, 251, 0.1); /* Sombra/Borde sutil claro */
+}
+
+:root {
+  /* Tipografía */
+  --ctrl-font-main: 'Inter Variable', system-ui, sans-serif;
+  --ctrl-font-mono: 'JetBrains Mono', monospace;
+
+  /* Semántica de Fuentes */
+  --ctrl-font-family-body: var(--ctrl-font-main);
+  --ctrl-font-family-title: var(--ctrl-font-mono);
+
+  /* Colores Base (Evitando Fatiga Visual) */
+  --ctrl-bg: #F1F5F9; // Slate 100
+  --ctrl-text: #1E293B; // Slate 800
+  --ctrl-primary: #3B82F6; // Azul estándar por defecto
+}
+
+/* Aplicación Global del Estándar */
+body {
+  font-family: var(--ctrl-font-family-body);
+  background-color: var(--ctrl-bg);
+  color: var(--ctrl-text);
+}
+
+h1, h2, h3, .terminal-text {
+  font-family: var(--ctrl-font-family-title);
 }

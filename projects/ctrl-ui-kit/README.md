@@ -5,7 +5,7 @@ Bienvenido al núcleo visual del ecosistema **KeyVort**. Esta librería contiene
 ## 🛠 Tech Stack
 * **Framework:** Angular 19+ (Signals Architecture).
 * **UI Engine:** Ionic Standalone Components.
-* **Styling:** Tailwind CSS v4 + SCSS modular.
+* **Styling:** SCSS modular.
 * **State Management:** Angular Signals (evitar `ngModel` y `ngClass` legacy).
 
 ---
@@ -46,9 +46,8 @@ Command es nuestro guía visual. Sus animaciones deben seguir los principios de 
 Si vas a crear o modificar un componente, asegúrate de:
 
 1. **Usar Signals:** Utiliza `input()`, `output()` y `model()` para la reactividad.
-2. **Tailwind v4:** Prioriza las clases utilitarias para el layout.
-3. **Archivos de Barril:** Si creas un componente nuevo, expórtalo en el `public-api.ts`.
-4. **Interactividad:** Todo elemento interactivo debe tener transiciones suaves (mínimo `0.2s ease-in-out`).
+2. **Archivos de Barril:** Si creas un componente nuevo, expórtalo en el `public-api.ts`.
+3. **Interactividad:** Todo elemento interactivo debe tener transiciones suaves (mínimo `0.2s ease-in-out`).
 
 ---
 

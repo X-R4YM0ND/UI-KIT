@@ -1,5 +1,9 @@
 import { Component, input, model, ChangeDetectionStrategy } from '@angular/core';
 
+/**
+ * Input component with label, placeholder, and two-way binding support.
+ * Uses signals for reactive state management.
+ */
 @Component({
   selector: 'lib-ctrl-input',
   imports: [],
@@ -12,10 +16,10 @@ export class CtrlInputComponent {
   placeholder = input<string>('');
   type = input<'text' | 'number' | 'password' | 'email'>('text');
   
-  // Definimos el modelo como una señal reactiva
+  // Reactive model signal for two-way binding
   value = model<string | number>('');
 
-  // Función para actualizar la señal desde el evento del DOM
+  // Update signal from DOM event
   onInput(event: Event) {
     const inputElement = event.target as HTMLInputElement;
     this.value.set(inputElement.value);
