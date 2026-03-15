@@ -1,59 +1,46 @@
-// En lugar de variable.css, usamos los pesos estándar
 @import "@fontsource/inter/400.css"; // Regular
 @import "@fontsource/inter/600.css"; // Semi-Bold
 @import "@fontsource/inter/700.css"; // Bold
 
-// JetBrains Mono (Asegúrate que estos también existan)
 @import "@fontsource/jetbrains-mono/400.css";
 @import "@fontsource/jetbrains-mono/700.css";
 
 /* =========================================
-   SISTEMA DE DISEÑO KEYVORT (UI-KIT)
+   SISTEMA DE DISEÑO (UI-KIT)
 ========================================= */
 
 :root {
-  /* =========================================
-     1. PALETA MAESTRA (Los Colores Puros)
-     Estos son intocables y siempre vibrantes.
-  ========================================= */
-  /* Identidad Cash */
+
   --kv-brand-green: #10B981;  
   --kv-brand-yellow: #FBBF24;
-  --kv-brand-pink: #FF80AB;   
-  
-  /* Identidad Tasks */
-  --kv-brand-indigo: #4F46E5; 
-  --kv-brand-orange: #F97316; 
 
-  /* Escala Neutral (Para los fondos y textos) */
-  --kv-gray-50: #F9FAFB;  /* Blanco Roto (Fondo Claro) */
-  --kv-gray-100: #FFFFFF; /* Blanco Puro (Superficie Clara) */
-  --kv-gray-800: #1F2937; /* Gris Carbón (Superficie Oscura) */
-  --kv-gray-900: #111827; /* Noche Profunda (Fondo Oscuro) */
+  --kv-gray-50: #F9FAFB;  
+  --kv-gray-100: #FFFFFF; 
+  --kv-gray-800: #1F2937; 
+  --kv-gray-900: #111827; 
   
   --kv-text-light: #E2E8F0;
   --kv-text-dark: #111827;
 
   /* =========================================
-     2. EL LIENZO: TEMA CLARO (Por defecto)
-     Solo cambian los fondos y textos.
+     TEMA CLARO (Por defecto)
   ========================================= */
---kv-gray-soft: #F1F5F9; /* Gris azulado muy suave */
+--kv-gray-soft: #F1F5F9; 
   
   --ctrl-bg: var(--kv-gray-soft);
   --ctrl-surface: #FFFFFF;
-  --ctrl-text: #0F172A; /* Azul noche profundo para el texto */
+  --ctrl-text: #0F172A; 
   --ctrl-border: rgba(15, 23, 42, 0.08);
 }
 
 /* =========================================
-   3. EL LIENZO: TEMA OSCURO (.dark)
+   TEMA OSCURO (.dark)
 ========================================= */
 body.dark {
   --ctrl-bg: var(--kv-gray-900);
   --ctrl-surface: var(--kv-gray-800);
   --ctrl-text: var(--kv-text-light);
-  --ctrl-border: rgba(249, 250, 251, 0.1); /* Sombra/Borde sutil claro */
+  --ctrl-border: rgba(249, 250, 251, 0.1); 
 }
 
 :root {
@@ -65,10 +52,8 @@ body.dark {
   --ctrl-font-family-body: var(--ctrl-font-main);
   --ctrl-font-family-title: var(--ctrl-font-mono);
 
-  /* Colores Base (Evitando Fatiga Visual) */
-  --ctrl-bg: #F1F5F9; // Slate 100
-  --ctrl-text: #1E293B; // Slate 800
-  --ctrl-primary: #3B82F6; // Azul estándar por defecto
+  --ctrl-bg: #F1F5F9; 
+  --ctrl-text: #1E293B; 
 }
 
 /* Aplicación Global del Estándar */

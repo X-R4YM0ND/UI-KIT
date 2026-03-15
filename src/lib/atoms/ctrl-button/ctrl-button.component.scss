@@ -1,37 +1,28 @@
-/* =========================================
-   ÁTOMO: CTRL-BUTTON (KeyVort System)
-========================================= */
-
 .ctrl-btn {
-  /* --- 1. Estilos Base (Usando Tokens) --- */
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--kv-space-sm); /* 8px según tu sistema */
-  padding: 0.75rem 1.5rem; /* Proporción áurea para botones */
-  border-radius: var(--kv-radius); /* 12px o el que definas en root */
+  gap: var(--kv-space-sm); 
+  padding: 0.75rem 1.5rem; 
+  border-radius: var(--kv-radius);
   
   font-weight: 600;
   font-size: 1rem;
-  font-family: var(--kv-font-sans); /* Tu variable Inter */
+  font-family: var(--kv-font-sans); 
   
   cursor: pointer;
   border: 2px solid transparent;
   outline: none;
   user-select: none;
   
-  /* Transición Premium */
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* --- 2. Variantes Semánticas --- */
 
   &.primary {
-    /* Usamos el verde de Ctrl_Cash o el índigo de Tasks según la App */
+
     background-color: var(--kv-brand-green);
-    color: var(--kv-gray-100); /* Blanco puro */
+    color: var(--kv-gray-100); 
     border-color: var(--kv-brand-green);
-    
-    /* Sombra ergonómica dinámica */
     box-shadow: 0 4px 12px color-mix(in srgb, var(--kv-brand-green), transparent 85%);
 
     &:hover {
@@ -51,7 +42,6 @@
     border-color: var(--kv-brand-green);
 
     &:hover {
-      /* Fondo sutil del 10% usando tu token */
       background-color: color-mix(in srgb, var(--kv-brand-green), transparent 90%);
       transform: translateY(-1px);
     }
@@ -73,7 +63,6 @@
     border: none;
   }
 
-  /* --- 3. Iconos y Feedback Visual --- */
   .icon-frame {
     display: inline-flex;
     align-items: center;
@@ -87,7 +76,6 @@
     }
   }
 
-  /* Animación de la Mascota/Icono al hacer Hover */
   &:hover .icon-frame {
     transform: scale(1.15) rotate(-5deg);
   }
